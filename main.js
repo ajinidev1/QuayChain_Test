@@ -15,8 +15,7 @@ function fetch_data() {
     headers: headers,
   })
     .then((response) => {
-      // populate_cards(response);
-      populate_cards(["QcNuc000", "QcNuc001", "QcNuc002", "QcNuc003", "QcNuc003"])
+      populate_cards(response?.Items);
     })
     .catch(function (err) {
       console.warn("Something went wrong.", err);
@@ -33,10 +32,10 @@ function create_card(obj) {
   child.className = "custom-card col-3";
   var data = document.createElement("div");
   data.className = "card-data";
-  data.innerHTML = obj;
+  data.innerHTML = obj.id;
   var date = document.createElement("p");
   date.className = "date";
-  date.innerText = new Date().toISOString();
+  date.innerText = obj.timestamp;
   data.appendChild(date);
   child.appendChild(data);
 
