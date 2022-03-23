@@ -5,18 +5,12 @@ const API_ENDPOINT =
 function fetch_data() {
   var headers = new Headers();
   headers.append("Access-Control-Allow-Origin", "*");
-  headers.append("GET", "POST", "OPTIONS");
-  headers.append('Access-Control-Allow-Origin', '*')
-  headers.append('Access-Control-Allow-Methods', 'POST, GET')
-  headers.append('Access-Control-Allow-Headers', 'Content-Type')
   fetch(API_ENDPOINT, {
-    mode: 'no-cors',
     method: "GET",
     headers: headers,
   })
-    .then((response) => {
-      populate_cards(response?.Items);
-    })
+  .then(response => response.json())
+  .then(data => populate_cards(data?.Items ?? []))
     .catch(function (err) {
       console.warn("Something went wrong.", err);
     });
