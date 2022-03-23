@@ -1,0 +1,38 @@
+.card-container {
+  max-width: 100%;
+  margin-right: 20%;
+  margin-left: 20%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-3 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.custom-card {
+  min-height: 100px;
+}
+
+.card-data {
+  margin: 2px;
+  border: 2px solid black;
+  text-align: center;
+  min-height: 100px;
+}
+
+.date {
+  padding-top: 60px;
+  font-size: smaller;
+}
